@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Coins</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+    <link rel="stylesheet" type="text/css" href="/style/common.css">
+	
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<!--[if lt IE9]>
+		<script type="text/javascript" src="/js/respond.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div id="header">
+		<div>
+			<ul>
+				<li class="active"><a href="">Packages</a></li>
+				<li><a href="">Orders</a></li>
+				<li><a href="">Users</a></li>
+				<li><a href="">Managers</a></li> 
+			</ul>
+			<div class="auth">
+				<span>Developer</span><a href="/logout">log out</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<div class="content"> 
+			<h1>Coin Packages</h1>
+			<div class="top-nav"> 
+				<div class="actions">
+					<a href="" class="button">Add item</a>
+				</div>
+			</div> 
+			<table class="books">
+				<thead>
+					<tr>
+						<th width="">Name</th>
+						<th width="">USD Price</th>
+						<th width="">Orders</th>
+					</tr>
+				</thead>
+				<tbody>
+						<tr>
+							<td>
+								<div>
+									<a href="">100 coins</a>
+								</div>
+							</td>
+							<td>50</td>
+							<td>
+								<div>
+									198
+									<span class="table-actions"><a href="" title="Set as inactive" class="del">Inactive</a></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a href="">200 coins</a>
+								</div>
+							</td>
+							<td>90</td>
+							<td>
+								<div>
+									77
+									<span class="table-actions"><a href="" title="Set as inactive" class="del">Inactive</a></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a href="">500 coins</a>
+								</div>
+							</td>
+							<td>200</td>
+							<td>
+								<div>
+									24
+									<span class="table-actions"><a href="" title="Set as inactive" class="del">Inactive</a></span>
+								</div>
+							</td>
+						</tr>
+				</tbody>
+			</table> 
+			
+			<br/>
+			
+			<h1>Package - New Item</h1>
+			<form class="write" action="" method="post">
+				<div class="group">
+					<div><label>Name</label></div>
+					<div>
+						<input type="text" id="User_name" name="User[name]" value="" maxlength="50">	
+						<span class="error">Incorrect value</span>
+						<small class="note">For instance, 1000 coins</small>
+					</div>
+				</div>
+				<div class="group">
+					<div><label>USD Price</label></div>
+					<div>
+						<input type="text" id="User_login" name="User[login]" value="" maxlength="50">	
+						<span class="error"></span>
+					</div>
+				</div>
+				<div class="group last">
+					<div></div>
+					<div>
+						<input type="submit" value="Submit">
+						&nbsp;&nbsp;
+						<a href="">Cancel</a>
+					</div>
+				</div>
+			</form>
+			
+			<div class="cover"></div>
+			<div class="confirm">
+				<p>Please, confirm the operation</p>
+				<p class="control"><a class="button" href="">Yes</a>&nbsp;&nbsp;<a class="button close" href="">No</a></p>
+			</div>  
+		</div>
+	</div>	
+</body>
+</html>

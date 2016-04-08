@@ -25,7 +25,7 @@ return array(
 		'application.models.*',
 	),
 
-	'modules'=>array(),
+	'modules'=>array('adm'),
 
 	// application components
 	'components'=>array(
@@ -59,8 +59,8 @@ return array(
 			/*'caseSensitive'=>false,*/
 			'rules'=>array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-				'<module:data>'=>'<module>/books',				
-				'<module:data>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<module>/<controller>/<action>/id/<id>',
+				'<module:adm>'=>'<module>/packages',				
+				'<module:adm>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<module>/<controller>/<action>/id/<id>',
 				'<action:(login|logout)>'=>'auth/<action>'
 			),
 			'showScriptName'=>false,
