@@ -4,11 +4,13 @@
 	<title><?php echo $this->pageTitle ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+	
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
     <link rel="stylesheet" type="text/css" href="/style/common.css">
 	
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/store.adm.js"></script>
 	<!--[if lt IE9]>
 		<script type="text/javascript" src="/js/respond.js"></script>
 	<![endif]-->

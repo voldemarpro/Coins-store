@@ -37,7 +37,7 @@ class LoginForm extends CFormModel
 	public function authenticate ($attribute, $params)
 	{
 		if (!$this->hasErrors())
-			$this->identity = new UserIdentity($this->login, $this->pwd);
+			$this->identity = new ManagerIdentity($this->login, $this->pwd);
 	}
 
 	/**
@@ -47,18 +47,18 @@ class LoginForm extends CFormModel
 	public function login()
 	{
 		if ($this->identity === null) {
-			$this->identity = new UserIdentity($this->login, $this->pwd);
+			$this->identity = new ManagerIdentity($this->login, $this->pwd);
 			$this->identity->authenticate();
 		}
 		
-		if ($this->identity->errorCode === UserIdentity::ERROR_NONE) {
+		if ($this->identity->errorCode === ManagerIdentity::ERROR_NONE) {
 			Yii::app()->user->login($this->identity);
 			return true;
 		} else {
-			if ($this->identity->errorCode === UserIdentity::ERROR_USERNAME_INVALID)
-				$message = 'Неверный логин или пароль';
+			if ($this->identity->errorCode === ManagerIdentity::ERROR_USERNAME_INVALID)
+				$message = 'Invalid login or password';
 			else
-				$message = 'Неизвестная ошибка авторизации';
+				$message = 'Unknown authentication error';
 
 			Yii::app()->user->setFlash('loginError', $message);
 

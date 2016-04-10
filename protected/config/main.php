@@ -8,7 +8,7 @@ return array(
 	
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	
-	'name'=>'My Purchase',
+	'name'=>'Coins Store',
 	
 	'defaultController' => 'home',
 	
@@ -23,9 +23,26 @@ return array(
 	'import'=>array(
 		'application.components.*',
 		'application.models.*',
+		'application.helpers.*'
 	),
 
-	'modules'=>array('adm'),
+	'modules'=>array(
+			'adm'=>array(
+				// autoloading component classes
+				'import'=>array(
+					'adm.components.*'
+				),
+				
+				'components'=>array(
+					'user'=>array(
+						'class' => 'WebAdmin',
+						'loginUrl'=>'/login',
+						'allowAutoLogin'=>false
+					)
+				)
+			)
+	
+		),
 
 	// application components
 	'components'=>array(
@@ -48,9 +65,9 @@ return array(
 		
 		'user'=>array(
 			'class' => 'WebUser',
-			'loginUrl'=>'/login',
+			'loginUrl'=>false,
 			// enable cookie-based authentication
-			'allowAutoLogin'=>false,
+			'allowAutoLogin'=>false
 		),
 		
 		// uncomment the following to enable URLs in path-format
@@ -61,6 +78,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				'<module:adm>'=>'<module>/packages',				
 				'<module:adm>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<module>/<controller>/<action>/id/<id>',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>/id/<id>',
 				'<action:(login|logout)>'=>'auth/<action>'
 			),
 			'showScriptName'=>false,

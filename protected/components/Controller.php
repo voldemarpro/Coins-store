@@ -5,8 +5,10 @@
  */
 class Controller extends CController
 {
-	private $_pageTitle;
+	const NO_DATA = 'No data to display';	
 	
+	private $_pageTitle;
+
 	public function init() {
 		// @var string the default layout for the controller view.
 		$this->layout = Yii::app()->user->role ? '//layouts/cms' : '//layouts/site';

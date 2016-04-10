@@ -192,7 +192,7 @@ select {
 
 .logo {
 	text-align: center;
-	margin: 100px auto;
+	margin: 50px auto;
 }
 
 .logo > * {
@@ -230,7 +230,52 @@ select {
 	text-align: center;
 }
 
-.group { margin-bottom: 20px; }
+.order-form-wrapper {
+	width: 500px;
+	margin: 0 auto 100px;
+}
+.order-form > .group > div:first-child +div, .order-summary .group > div:first-child +div {
+	width: 260px;
+}
+.order-form, .order-summary {
+	border: 6px solid #fff;
+	border-radius: 4px;
+	padding: 20px 30px;
+}
+.order-form .group {
+	margin-bottom: 20px;
+}
+.order-form .group > div {
+	vertical-align: top;
+}
+.order-form .group div > * {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+}
+.order-form  label:only-child {
+	position: relative;
+	top: 5px;
+}
+.order-form p {
+	margin-top: 0;
+	padding: 5px 0;
+}
+.order-form p > label {
+	padding-right: 5px;
+}
+.order-form [type=radio] {
+	margin: 0 3px 0 0;
+	vertical-align: top;
+	position: relative;
+	top: 0.25em;
+}
+.order-summary .group {
+	margin-bottom: 10px;
+}
+
+.group { margin-bottom: 10px; }
 
 .group.last { margin-top: 30px; }
 
@@ -243,7 +288,6 @@ select {
 }
 .group > div:first-child +div{
 	width: 640px;
-	position: relative;
 }
 
 .group > div > * {
@@ -254,17 +298,17 @@ select {
 	box-sizing: border-box;
 	width: 40%;
 }
-.group span {
+.group .error  {
 	width: 55%;
 }
+.group .error, .order-form > .group .error  {
+	display: none;
+}
 .group [type=submit] {
-	width: 120px;
+	width: 120px!important;
 }
 .group small {
     font-size: 95%;
-    position: absolute;
-    top: 40px;
-    left: 0px;
 }
 
 input[type=text],
@@ -273,11 +317,18 @@ input[type=submit],
 select {
 	padding: 3px 2px;
 }
+
+input[type=text],
+input[type=password],
+select {
+	border: 1px solid lightgrey;
+}
+
 input[type=submit] {
 	text-transform: uppercase;
 }
 
-span.error, div.error {
+.error {
 	padding: 0 10px;
 	margin: 10px auto;
 	line-height: 2;

@@ -24,7 +24,10 @@ class User extends CActiveRecord
 		return array(
 			array('first_name, last_name, email', 'required'),
 			array('first_name, last_name, email', 'length', 'max'=>50),
-			array('email', 'email')
+			array('first_name, last_name', 'match', 'allowEmpty'=>false, 'pattern'=>'/[A-Z]{2,}/i'),
+			array('email', 'email', 'allowEmpty'=>false),
+			array('email', 'unique'),
+			array('first_name, last_name, id', 'safe', 'on'=>'insert')
 		);
 	}
 

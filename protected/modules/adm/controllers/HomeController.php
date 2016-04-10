@@ -39,7 +39,7 @@ class HomeController extends Controller
 		if (Yii::app()->user->isGuest || !Yii::app()->user->role)
 			$this->redirect(Yii::app()->user->loginUrl);
 		else
-			Yii::app()->runController('data/packages');
+			Yii::app()->runController('packages');
 	}
 
 	/**

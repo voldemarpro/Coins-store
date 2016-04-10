@@ -21,26 +21,19 @@ class HomeController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index', 'error'),
-				'users'=>array('@'),
-			),
-			array('deny',  // deny all users
-				'actions'=>array('index'),
-				'users'=>array('*')
-			),
+				'actions'=>array('index', 'error', 'summary'),
+				'users'=>array('*'),
+			)
 		);
 	}
 
 	/**
-	 * Role based home page
+	 * Auth/role based home page
 	 */
 	public function actionIndex()
 	{
 		if (Yii::app()->user->isGuest)
-			$this->redirect(Yii::app()->user->loginUrl);
-
-		if (Yii::app()->user->role)
-			Yii::app()->runController('data/books');
+			Yii::app()->runController('order');
 		else
 			$this->render('hello');
 	}
