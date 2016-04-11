@@ -21,9 +21,14 @@ class Controller extends CController
 			'accessControl' // perform access control for CRUD operations
 		);
 	}
-	
+
 	public function getViewPath() {
-		return Yii::app()->getViewPath().DIRECTORY_SEPARATOR.'pages'.DIRECTORY_SEPARATOR.$this->getId();
+		if (!empty($this->module) && !empty($this->module->name))
+			$pathBase = $this->module->getViewPath();
+		else
+			$pathBase = Yii::app()->getViewPath();
+
+		return $pathBase.DIRECTORY_SEPARATOR.'pages'.DIRECTORY_SEPARATOR.$this->getId();
 	}
 	
 	public function setPageTitle($value)

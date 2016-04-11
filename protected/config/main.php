@@ -30,18 +30,12 @@ return array(
 			'adm'=>array(
 				// autoloading component classes
 				'import'=>array(
-					'adm.components.*'
+					'adm.components.*',
+					'adm.models.*'
 				),
 				
-				'components'=>array(
-					'user'=>array(
-						'class' => 'WebAdmin',
-						'loginUrl'=>'/login',
-						'allowAutoLogin'=>false
-					)
-				)
+				'defaultController' => 'man'
 			)
-	
 		),
 
 	// application components
@@ -75,11 +69,13 @@ return array(
 			'urlFormat'=>'path',
 			/*'caseSensitive'=>false,*/
 			'rules'=>array(
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-				'<module:adm>'=>'<module>/packages',				
-				'<module:adm>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<module>/<controller>/<action>/id/<id>',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>/id/<id>',
-				'<action:(login|logout)>'=>'auth/<action>'
+				'<module:adm>' => '<module>',			
+				'<module:adm>/<action:(login|logout)>' => '<module>/auth/<action>',
+				'<module:adm>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+				'<module:adm>/<controller:\w+>' => '<module>/<controller>',				
+				'<module:adm>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>/id/<id>',
+				'<controller:\w+>/<action:\w+>' =>'<controller>/<action>',
+				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>/id/<id>'
 			),
 			'showScriptName'=>false,
 		),

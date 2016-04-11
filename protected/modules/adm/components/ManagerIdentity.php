@@ -1,7 +1,7 @@
 <?php
 class ManagerIdentity extends CUserIdentity {
 
-	const DEV_LOGIN_HASH = 'fb52a20dbf0f8d7b042bced00c4710bc';
+	const DEV_LOGIN_HASH = 'e77989ed21758e78331b20e477fc5582';
 	const DEV_PWD_HASH = '202cb962ac59075b964b07152d234b70';
 	
 	protected $_id;

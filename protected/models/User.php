@@ -31,9 +31,17 @@ class User extends CActiveRecord
 		);
 	}
 
+	/**
+	 * @return array Массив с описанием связей
+	 */
 	public function relations()
 	{
-		return array();
+		return array(
+			// Заказы
+			'orders'=> array(self::HAS_MANY, 'Order', 'user_id'),
+			// Кол-во заказов
+			'ordersCount'=> array(self::STAT, 'Order', 'user_id')
+		);
 	}
 
 	public function attributeLabels()

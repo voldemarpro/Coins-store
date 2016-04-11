@@ -93,7 +93,7 @@ ul {
 }
 
 .pagination:before {
-    content: 'Страницы';
+    content: 'Pages';
 	position: relative;
 	top: -9px;
 }
@@ -298,7 +298,7 @@ select {
 	box-sizing: border-box;
 	width: 40%;
 }
-.group .error  {
+.group .error-wrapper, .order-form .error  {
 	width: 55%;
 }
 .group .error, .order-form > .group .error  {
@@ -330,11 +330,13 @@ input[type=submit] {
 
 .error {
 	padding: 0 10px;
-	margin: 10px auto;
 	line-height: 2;
 	background: #ffd3d3;
+}/*
+.order-form .error {
+	margin: 10px auto;
 }
-
+*/
 .confirm {
 	z-index: 1000;
 	padding: 15px;

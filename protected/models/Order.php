@@ -54,9 +54,10 @@ class Order extends CActiveRecord
 	{
 		return array(
 			array('amount, pay_type, pay_sum, prod_id, user_id, card_number, card_code, card_valid_thru', 'required'),
-			array('card_number', 'match', 'allowEmpty'=>false, 'pattern'=>'/('.self::PATT_VISA.'|'.self::PATT_MCARD.')/'),
-			array('card_code', 'numerical', 'min'=>100, 'max'=>999),
-			array('id, user_id, pay_curr, date_time, card_number, card_code', 'safe', 'on'=>'insert')
+			array('card_number', 'match', 'on'=>'insert', 'allowEmpty'=>false, 'pattern'=>'/('.self::PATT_VISA.'|'.self::PATT_MCARD.')/'),
+			array('card_code', 'numerical', 'on'=>'insert', 'min'=>100, 'max'=>999),
+			array('amount, pay_sum', 'numerical', 'min'=>50, 'max'=>1000000),
+			array('id, user_id, pay_curr, pay_type, date_time, card_number, card_code, card_valid_thru', 'unsafe', 'on'=>'update')
 		);
 	}
 

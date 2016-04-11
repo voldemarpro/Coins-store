@@ -22,10 +22,9 @@ class Manager extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('login, name', 'required'),
+			array('login, name, pwd', 'required'),
 			array('login', 'unique', 'allowEmpty'=>false, 'caseSensitive'=>false),
-			array('id', 'safe', 'on'=>'devLogin'),
-			array('pwd', 'required', 'on'=>'insert')
+			array('id', 'safe', 'on'=>'devLogin')
 		);
 	}
 
@@ -50,9 +49,9 @@ class Manager extends CActiveRecord
 	public function getDevAttr() {
 		return array(
 			'id' => -1,
-			'login' => UserIdentity::DEV_LOGIN_HASH,
+			'login' => ManagerIdentity::DEV_LOGIN_HASH,
 			'name' => 'Developer',
-			'pwd' => UserIdentity::DEV_PWD_HASH
+			'pwd' => ManagerIdentity::DEV_PWD_HASH
 		);
 	}
 	

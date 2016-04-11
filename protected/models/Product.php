@@ -27,7 +27,7 @@ class Product extends CActiveRecord
 	{
 		return array(
 			array('name, price', 'required'),
-			array('name', 'length', 'max'=>50)
+			array('name', 'length', 'max'=>30)
 		);
 	}
 	
@@ -37,8 +37,8 @@ class Product extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			// Заказы
-			'orders'=> array(self::HAS_MANY, 'Order', 'prod_id')
+			// Кол-во заказов
+			'ordersCount'=> array(self::STAT, 'Order', 'prod_id')
 		);
 	}
 
@@ -46,7 +46,8 @@ class Product extends CActiveRecord
 	{
 		return array(
 			'id' => '#',
-			'name' => 'Name'
+			'name' => 'Name',
+			'price' => 'USD Price'
 		);
 	}
 }

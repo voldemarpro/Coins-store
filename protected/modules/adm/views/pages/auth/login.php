@@ -10,20 +10,20 @@
 <body>
 	<div class="wrapper">
 		<div class="logo">
-			<img src="/i/books.png" alt="" />
-			<h1>Мои Книги</h1>
+			<img src="/i/coin-logo.png" alt="" />
+			<h1><?php echo $this->pageTitle, ' &ndash; CMS' ?></h1>
 		</div>
 		<div class="login-form-wrapper">
 			<form method="post" action="" />
 				<div>
-					<label>Логин</label>
+					<label>Login</label>
 					<input type="text" name="LoginForm[login]" />
 				</div>
 				<div>
-					<label>Пароль</label>
+					<label>Password</label>
 					<input type="password" name="LoginForm[pwd]" />
 				</div>
-				<div><input type="submit" value="Войти" /></div>
+				<div><input type="submit" value="Enter" /></div>
 			</form>
 			<div class="error"><?php echo Yii::app()->user->getFlash('loginError') ?></div>
 		</div>

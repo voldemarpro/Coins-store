@@ -31,7 +31,7 @@ class MyAesCodec
             $i += 2; 
         }
  		
-		$key = self::$key;
+		$_key = self::$key;
 		$mysqlKey = str_repeat(chr(0), 16);
 		for ($i = 0, $len = strlen($_key); $i < $len; $i++)
 			$mysqlKey[$i%16] = $mysqlKey[$i%16] ^ $_key[$i];

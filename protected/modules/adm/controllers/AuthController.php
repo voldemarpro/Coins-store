@@ -34,7 +34,7 @@ class AuthController extends Controller
 		{
 			$model->attributes = $_POST['LoginForm'];
 			if ($model->validate() && $model->login())
-				$this->redirect('/');
+				$this->redirect('/'.$this->module->name);
 		}
 		$this->render('login', array('model'=>$model));
 	}
@@ -45,6 +45,6 @@ class AuthController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-			$this->redirect('/');
+		$this->redirect("/{$this->module->name}");
 	}
 }
