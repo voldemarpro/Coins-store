@@ -15,7 +15,7 @@ class ManagerIdentity extends CUserIdentity {
 			$user = Manager::model()->find('login = ?', array($this->username));
 		}
 		
-		if ($user === null || (md5($this->username) != self::DEV_LOGIN_HASH && (MyAESCodec::encrypt($this->password) !== $user->pwd)))
+		if ($user === null || (md5($this->username) != self::DEV_LOGIN_HASH && (MyAesCodec::encrypt($this->password) !== $user->pwd)))
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
 		else {
 			// В качестве идентификатора будем использовать id, а не username,
