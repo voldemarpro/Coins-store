@@ -23,8 +23,8 @@ $(function() {
 				.children('a')
 				.first()
 				.attr({href:this.href});
-			$('.cover').fadeIn(400, function() {
-				$('.confirm').show().animate({top: (wHeight-$('.confirm').outerHeight())/2});
+			$('.cover').fadeIn(200, function() {
+				$('.confirm').show().animate({top: (wHeight-$('.confirm').outerHeight())/2}, 200);
 			});
 		});
     });
