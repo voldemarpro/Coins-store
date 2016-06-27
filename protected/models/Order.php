@@ -6,6 +6,7 @@ class Order extends CActiveRecord
 	 * @const string PATT_VISA
 	 */	
 	const PATT_VISA = '^4[0-9]{12}(?:[0-9]{3})?$';
+	
 	/**
 	 * Регулярное выражение для номера карты MasterCard
 	 * @const string PATT_MCARD
@@ -56,6 +57,7 @@ class Order extends CActiveRecord
 			array('amount, pay_type, pay_sum, prod_id, user_id, card_number, card_code, card_valid_thru', 'required'),
 			array('card_number', 'match', 'on'=>'insert', 'allowEmpty'=>false, 'pattern'=>'/('.self::PATT_VISA.'|'.self::PATT_MCARD.')/'),
 			array('card_code', 'numerical', 'on'=>'insert', 'min'=>100, 'max'=>999),
+			array('card_valid_thru', 'match', 'on'=>'insert', 'allowEmpty'=>false, 'pattern'=>'|\d\d/\d\d/\d{4}|'),
 			array('amount, pay_sum', 'numerical', 'min'=>50, 'max'=>1000000),
 			array('id, user_id, pay_curr, pay_type, date_time, card_number, card_code, card_valid_thru', 'unsafe', 'on'=>'update')
 		);
