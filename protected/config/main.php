@@ -83,10 +83,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'class'=>'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=xsolla',
+			'connectionString' => 'mysql:host=localhost;dbname=dev_xsolla',
 			'emulatePrepare' => false,
 			'autoConnect' => false,
-			'username' => 'root',
+			'username' => 'dev_root',
 			'password' => 'cheburashka',
 			'charset' => 'utf8',
 			'tablePrefix'=>'bill_'
