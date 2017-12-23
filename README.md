@@ -6,10 +6,7 @@ Model classes are located in protected/models and protected/modules/adm/models.
 
 Currently hosted at http://xsolla.dev59.tk
 
-
-# Монетный киоск
-
-Простой испытательный проект (PHP-Yii/MVC + HTML/CSS/JQuery) для кандидата в разработчики компании [XSolla](https://xsolla.com).
+Простой испытательный проект (PHP-Yii1/MVC + HTML/CSS/JQuery) для кандидата в разработчики компании [XSolla](https://xsolla.com).
 Классы с описанием моделей находятся в папках protected/models и protected/modules/adm/models.
 
 Размещен по адресу http://xsolla.dev59.tk
