@@ -1,4 +1,5 @@
-js/*.js linguist-language=JavaScript
+*.js linguist-language=JavaScript
 framework/* linguist-vendored
 assets/* linguist-vendored
 *.pdf linguist-documentation
+*.db linguist-documentation
