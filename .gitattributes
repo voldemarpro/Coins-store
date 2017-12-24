@@ -1,5 +1,6 @@
 *.js linguist-language=JavaScript
-framework/* linguist-vendored
-assets/* linguist-vendored
 *.pdf linguist-documentation
 *.db linguist-documentation
+framework/* linguist-vendored
+assets/* linguist-vendored
+runtime/* linguist-vendored
