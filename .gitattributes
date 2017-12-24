@@ -1,6 +1,7 @@
 *.js linguist-language=JavaScript
 *.pdf linguist-documentation
 *.db linguist-documentation
+*.1 linguist-documentation
 framework/* linguist-vendored
 assets/* linguist-vendored
-runtime/* linguist-vendored
+protected/runtime/* linguist-vendored
